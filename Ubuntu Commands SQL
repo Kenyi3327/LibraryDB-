@@ -1,0 +1,50 @@
+SQL es un lenguaje de programación orientado a consultas de bases de datos (Structured Query Language).
+MySQL es un sistema de administración de bases de datos (Database Management System, DBMS) o también llamado motor de bases de datos.
+INFORMATION_SCHEMA es la base de datos de información, que almacena información acerca de todas las otras bases de datos que mantiene el servidor MySQL.
+Siempre usar ; al final de cada sentencia SQL.
+Una base de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso.
+Los tipos de tablas más comunes desde el punto de vista del diseño son:
+TABLAS DE CATÁLOGO (MyISAM)
+TABLAS DE OPERACIÓN (InnoDB)
+MyISAM es más rápido para las lecturas, InnoDB es más rápido para las escrituras.
+MySQL no detecta cuando los datos de AUTO_INCREMENT han sido borrados, por tanto seguira con el ultimo dato que guardo.
+NOT NULL permite que un campo no pueda estar sin completar, es distinto NULO a EMPTY.
+INTEGER UNSIGNED permite que no existan signos, de forma que los numeros siempre seran positivos.
+DEFAULT [valor por defecto]: Si no introducimos ningun dato, mySQl automaticamente le dara al campo el valor de DEFAULT.
+La diferencia entre CHAR y VARCHAR es que en el primer tipo de dato se asigna un valor en memoria por defecto dependiendo el tamaño de espacios que sean asignados,
+en cambio, VARCHAR va llenando esos campos en memoria conforme se tengan los datos en el campo.
+COMMENT: Comentario a la columna que solo es visible para quien este manejando la base de datos.
+Para imagenes asignamos VARCHAR, NOTA: no se guarda la imagen como tal, guardamos el url del origen de la imagen.
+FLOAT es utilizado para calculos precisos, DOUBLE puede ser aplicado de forma simple a los precios de una libreria (en este caso).
+DOUBLE (espacios que podremos llenar, espacios asignados para numeros decimales).
+TEXT permite agregar texto, grandes cantidades de caracteres.
+Para utilizar el una palabra reservada como nombre de una columna utilizamos column_name.
+UNIQUE es una llave que indica que el valor de esa columna tiene que ser único para cada tupla.
+Existen dos tipos de datos de fecha en mysql: DATETIME y TIMESTAMP.
+TIMESTAMP está basado en el númeor Epoch; que es el número de segundos que han pasado desde el 1 de enero de 1970.
+DATETIME puede almacenar cualquier fecha, incluso antes de 1970.
+TIMESTAMP es más eficiente que DATETIME a la hora de hacer calculos.
+Con el tipo de dato ENUM() podemos indicarle a la base de datos cuales son los valores que puede tomar una columna.
+CURRENT_TIMESTAMP obtiene la hora actual de la computadora en el momento que se inserta una tupla.
+En el siguiente ejemplo se guarda la hora exacta en que una tupla se modificó:
+update_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP.
+LIMIT es una sentencia con la cual podemos indicar el número de registros que queremos traer.
+La utilización de los querys anidados son muy útiles pero con riesgo de afectar las tuplas que no correspondan.
+La sentencia ORDER BY en una consulta nos permite ordenar el resultado de acuerdo a una columna específica.
+ASC o DESC son las maneras en que podemos ordenar los resultados de una tabla: ascendente o descendente.
+ASC es el orden por defecto en una consulta.
+INNER JOIN: Devuelve los valores coincidentes en 2 o mas tablas.
+LEFT JOIN: Devuelve los valores coincidentes entre ambas tablas y los valores de la tabla de la izquierda.
+GROUP BY nos permite agrupar los resultados de una sentencia por un campo específico y mostrarlo en una sola fila.
+La instrucción SELECT DISTINCT se usa para devolver solo valores distintos (diferentes).
+la instrucción IN o NOT IN son maneras en que podemos filtrar los resultados de una consulta.
+La función AVG () devuelve el valor promedio de una columna numérica.
+STDDEV() calcula la desviación estándar de una columna numérica.
+MAX() nos devuelve el número mayor de una columna numérica y MIN() el menor.
+La función CONCAT nos ayuda a concatenar 2 o más cadenas de caracteres.
+La función TO_DAYS() recibe cualquier fecha y me devuelve el número de dias que han pasado desde el primero de
+enero del año 0 de nuestra época hasta la indicada.
+RAND() devuelve un número decimal aleatorio.
+La condicion IN(‘value1’, ‘value2’) en una sentencia nos permite traer las tuplas que cumplan con esos valores.
+El comando ALTER es la manera en que podemos modificar el esquema de una base de datos.
+mysqldump es un programa de respaldo de base de datos.
